@@ -1,0 +1,85 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #fce4ec, #f3e5f5);
+  color: #333;
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Título principal */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #c2185b;
+  text-align: center;
+}
+
+/* Párrafos explicativos */
+p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+/* Imagen o ilustración opcional */
+img.ilustracion {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  margin: 2rem 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor general */
+.container {
+  max-width: 900px;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+  margin-top: 3rem;
+}
+
+/* Botón de acción */
+.button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #c2185b;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background-color: #ad1457;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
