@@ -165,3 +165,21 @@ body {
 .wheel-and-hamster {
   transform: scale(1.2);
 }
+#preloader{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;background:#111827;z-index:9999;}
+.wheel-and-hamster{position:relative;width:100px;height:100px;}
+.wheel{position:absolute;top:0;left:0;width:100%;height:100%;border:5px solid #f3f4f6;border-radius:50%;animation:spin 1s linear infinite;}
+.hamster{position:absolute;top:50%;left:50%;width:50px;height:25px;transform:translate(-50%,-50%);animation:run 1s linear infinite;}
+.hamster__body{width:100%;height:100%;background:#ffbf71;border-radius:25px 25px 20px 20px;position:relative;}
+.hamster__head{position:absolute;top:-10px;left:30px;width:20px;height:20px;background:#ffbf71;border-radius:50%;}
+.hamster__ear{position:absolute;top:-5px;left:14px;width:6px;height:6px;background:#fff;border-radius:50%;}
+.hamster__eye{position:absolute;top:4px;left:15px;width:4px;height:4px;background:#000;border-radius:50%;}
+.hamster__nose{position:absolute;top:7px;left:20px;width:4px;height:4px;background:#e27d60;border-radius:50%;}
+.hamster__limb{position:absolute;bottom:0;width:10px;height:4px;background:#ffbf71;border-radius:2px;}
+.hamster__limb--fr{right:0;transform:rotate(-20deg);}
+.hamster__limb--fl{right:15px;transform:rotate(-20deg);}
+.hamster__limb--br{left:0;transform:rotate(20deg);}
+.hamster__limb--bl{left:15px;transform:rotate(20deg);}
+.hamster__tail{position:absolute;left:-6px;bottom:2px;width:6px;height:6px;background:#ffbf71;border-radius:50%;}
+.spoke{display:none;}
+@keyframes spin{to{transform:rotate(360deg);}}
+@keyframes run{to{transform:translate(-50%,-50%) rotate(-360deg);}}

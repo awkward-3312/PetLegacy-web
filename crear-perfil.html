@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Perfil - PetLegacy</title>
+  <link rel="stylesheet" href="css/crear-perfil.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+</head>
+<body>
+  <div id="preloader">
+    <div aria-label="Hamster corriendo en una rueda" role="img" class="wheel-and-hamster">
+      <div class="wheel"></div>
+      <div class="hamster">
+        <div class="hamster__body">
+          <div class="hamster__head">
+            <div class="hamster__ear"></div>
+            <div class="hamster__eye"></div>
+            <div class="hamster__nose"></div>
+          </div>
+          <div class="hamster__limb hamster__limb--fr"></div>
+          <div class="hamster__limb hamster__limb--fl"></div>
+          <div class="hamster__limb hamster__limb--br"></div>
+          <div class="hamster__limb hamster__limb--bl"></div>
+          <div class="hamster__tail"></div>
+        </div>
+      </div>
+      <div class="spoke"></div>
+    </div>
+  </div>
+
+  <main class="form-container">
+    <h1>Crea tu perfil</h1>
+    <form id="perfil-form" enctype="multipart/form-data">
+      <label>Nombre de usuario
+        <input type="text" id="username" required>
+      </label>
+      <label>Descripción
+        <textarea id="descripcion" rows="3"></textarea>
+      </label>
+      <label>Avatar
+        <input type="file" id="avatar" accept="image/png, image/jpeg" required>
+      </label>
+      <button type="submit">Guardar</button>
+    </form>
+  </main>
+
+  <script type="module" src="js/crear-perfil.js"></script>
+  <script type="module" src="js/preloader.js"></script>
+</body>
+</html>
