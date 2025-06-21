@@ -131,4 +131,14 @@
     color: #9ca3af;
     margin-top: 1rem;
   }
-  
+
+/* Estilo general del preloader */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #111827;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
