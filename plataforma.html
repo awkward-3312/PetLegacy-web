@@ -2,11 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plataforma - PetLegacy</title>
-  <link rel="stylesheet" href="css/plataforma.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perfil de Mascota | PetLegacy</title>
+  <link rel="stylesheet" href="css/perfil.css">
 </head>
 <body>
   <div id="preloader">
@@ -30,41 +28,26 @@
     </div>
   </div>
 
-  <header>
-    <h1>PetLegacy</h1>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="perfil.html">Perfil</a>
-      <a href="memorial.html">Memorial</a>
-      <button id="logout">Salir</button>
-    </nav>
-  </header>
+  <div class="container">
+    <h1>Perfiles de Mascotas</h1>
 
-  <main class="container">
-    <section id="perfil"></section>
+    <p>
+      En PetLegacy, cada mascota tiene su propio espacio para brillar. La sección de perfil te permite crear una ficha única para tu compañero peludo (o emplumado 🐾🐦). Aquí podrás agregar su nombre, raza, edad, una foto que lo represente, y contar su historia: cómo llegó a tu vida, sus curiosidades favoritas, sus logros… ¡todo lo que quieras compartir!
+    </p>
 
-    <section id="nuevo-pet">
-      <h2>Registrar nueva mascota</h2>
-      <form id="pet-form" enctype="multipart/form-data">
-        <input type="text" id="pet-name" placeholder="Nombre" required>
-        <input type="text" id="pet-species" placeholder="Especie" required>
-        <input type="number" id="pet-age" placeholder="Edad" min="0" required>
-        <select id="pet-status">
-          <option value="activo">Activo</option>
-          <option value="memorial">Memorial</option>
-        </select>
-        <input type="file" id="pet-photo" accept="image/png, image/jpeg" required>
-        <button type="submit">Guardar mascota</button>
-      </form>
-    </section>
+    <p>
+      Los perfiles están pensados para que tu mascota tenga presencia propia dentro de la red. Otros usuarios podrán ver sus publicaciones, comentar, enviar corazones y compartir recuerdos. Si tu mascota ha partido, podrás activar el <strong>Modo Memorial</strong>, que transforma su perfil en un espacio de homenaje donde amigos y familiares pueden dejar mensajes y recuerdos.
+    </p>
 
-    <section id="mis-mascotas">
-      <h2>Mis Mascotas</h2>
-      <div class="card-grid" id="pet-grid"></div>
-    </section>
-  </main>
+    <img src="https://cdn.pixabay.com/photo/2020/04/19/10/26/dog-5068264_1280.jpg" alt="Ilustración de perfil de mascota" class="ilustracion">
 
-  <script type="module" src="js/plataforma.js"></script>
+    <p>
+      ¡Explora, comparte y honra el legado de tu mascota en un lugar seguro, respetuoso y lleno de cariño! 💖
+    </p>
+
+    <a href="login.html" class="button">Crear perfil de mi mascota</a>
+  </div>
+
   <script type="module" src="js/preloader.js"></script>
 </body>
 </html>
