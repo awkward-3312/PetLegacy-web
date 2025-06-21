@@ -2,52 +2,67 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PetLegacy - Honra su legado</title>
-  <link rel="stylesheet" href="css/index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
   <!-- Preloader de hámster -->
-<div id="preloader">
-  <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster">
-    <div class="wheel"></div>
-    <div class="hamster">
-      <div class="hamster__body">
-        <div class="hamster__head">
-          <div class="hamster__ear"></div>
-          <div class="hamster__eye"></div>
-          <div class="hamster__nose"></div>
+  <div id="preloader">
+    <div aria-label="Hamster corriendo en una rueda" role="img" class="wheel-and-hamster">
+      <div class="wheel"></div>
+      <div class="hamster">
+        <div class="hamster__body">
+          <div class="hamster__head">
+            <div class="hamster__ear"></div>
+            <div class="hamster__eye"></div>
+            <div class="hamster__nose"></div>
+          </div>
+          <div class="hamster__limb hamster__limb--fr"></div>
+          <div class="hamster__limb hamster__limb--fl"></div>
+          <div class="hamster__limb hamster__limb--br"></div>
+          <div class="hamster__limb hamster__limb--bl"></div>
+          <div class="hamster__tail"></div>
         </div>
-        <div class="hamster__limb hamster__limb--fr"></div>
-        <div class="hamster__limb hamster__limb--fl"></div>
-        <div class="hamster__limb hamster__limb--br"></div>
-        <div class="hamster__limb hamster__limb--bl"></div>
-        <div class="hamster__tail"></div>
       </div>
+      <div class="spoke"></div>
     </div>
-    <div class="spoke"></div>
   </div>
-</div>
 
-  <main class="hero-container">
-    <section class="intro">
+  <header>
+    <div class="container navbar">
+      <h1 class="logo">PetLegacy</h1>
+      <button class="nav-toggle" id="nav-toggle" aria-controls="menu" aria-label="Abrir menú" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      <nav id="main-nav">
+        <ul id="menu" class="nav-links">
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="perfil.html">Perfil Mascota</a></li>
+          <li><a href="memorial.html">Memorial</a></li>
+          <li><a href="login.html">Log In</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
       <h1>🐾 PetLegacy</h1>
       <p class="tagline">Conecta con tu mascota. Honra su legado. Comparte su historia.</p>
       <p class="description">
         PetLegacy es una plataforma emocional donde puedes crear perfiles activos de tus mascotas,
-        rendir homenaje a aquellas que han partido, y compartir momentos inolvidables con una comunidad que entiende lo que significan.
+        rendir homenaje a aquellas que han partido y compartir momentos inolvidables con una comunidad que entiende lo que significan.
       </p>
-    </section>
-
-    <section class="buttons">
-      <a href="index.html" class="btn-portal">Inicio</a>
-      <a href="perfil.html" class="btn-portal">Perfil Mascota</a>
-      <a href="memorial.html" class="btn-portal">Memorial</a>
-      <a href="login.html" class="btn-portal">Log In</a>
+      <a href="login.html" class="cta-btn">Comienza tu legado</a>
     </section>
   </main>
+
+  <footer>
+    <p>&copy; 2024 PetLegacy</p>
+  </footer>
 
   <script src="js/index.js"></script>
 </body>
