@@ -26,6 +26,33 @@
       <button class="sign" type="submit">Ingresar</button>
     </form>
 
+<!-- Sign Up Form - Visualmente igual al login -->
+<form id="signup-form" class="form" style="display: none;">
+  <p class="title">Registrarse</p>
+  <p class="message">Crea una cuenta para acceder a PetLegacy.</p>
+  
+  <label>
+    <i class="fa-solid fa-envelope"></i>
+    <input type="email" id="signup-email" name="email" placeholder="Correo electrónico" required />
+  </label>
+
+  <label>
+    <i class="fa-solid fa-lock"></i>
+    <input type="password" id="signup-password" name="password" placeholder="Contraseña" required />
+  </label>
+
+  <label>
+    <i class="fa-solid fa-lock"></i>
+    <input type="password" id="signup-confirm" name="confirm" placeholder="Confirmar contraseña" required />
+  </label>
+
+  <button class="sign" type="submit">Crear cuenta</button>
+
+  <p class="signup" id="to-login">
+    ¿Ya tienes una cuenta? <a href="#" id="switch-to-login">Inicia sesión</a>
+  </p>
+</form>
+
     <div class="social-message">
       <div class="line"></div>
       <p class="message">O ingresa con</p>
