@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plataforma - PetLegacy</title>
+  <link rel="stylesheet" href="css/plataforma.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+</head>
+<body>
+  <div id="preloader">
+    <div aria-label="Hamster corriendo en una rueda" role="img" class="wheel-and-hamster">
+      <div class="wheel"></div>
+      <div class="hamster">
+        <div class="hamster__body">
+          <div class="hamster__head">
+            <div class="hamster__ear"></div>
+            <div class="hamster__eye"></div>
+            <div class="hamster__nose"></div>
+          </div>
+          <div class="hamster__limb hamster__limb--fr"></div>
+          <div class="hamster__limb hamster__limb--fl"></div>
+          <div class="hamster__limb hamster__limb--br"></div>
+          <div class="hamster__limb hamster__limb--bl"></div>
+          <div class="hamster__tail"></div>
+        </div>
+      </div>
+      <div class="spoke"></div>
+    </div>
+  </div>
+
+  <header>
+    <h1>PetLegacy</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="perfil.html">Perfil</a>
+      <a href="memorial.html">Memorial</a>
+      <button id="logout">Salir</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="perfil"></section>
+
+    <section id="nuevo-pet">
+      <h2>Registrar nueva mascota</h2>
+      <form id="pet-form" enctype="multipart/form-data">
+        <input type="text" id="pet-name" placeholder="Nombre" required>
+        <input type="text" id="pet-species" placeholder="Especie" required>
+        <input type="number" id="pet-age" placeholder="Edad" min="0" required>
+        <select id="pet-status">
+          <option value="activo">Activo</option>
+          <option value="memorial">Memorial</option>
+        </select>
+        <input type="file" id="pet-photo" accept="image/png, image/jpeg" required>
+        <button type="submit">Guardar mascota</button>
+      </form>
+    </section>
+
+    <section id="mis-mascotas">
+      <h2>Mis Mascotas</h2>
+      <div class="card-grid" id="pet-grid"></div>
+    </section>
+  </main>
+
+  <script type="module" src="js/plataforma.js"></script>
+  <script type="module" src="js/preloader.js"></script>
+</body>
+</html>

@@ -1,74 +1,59 @@
-const SUPABASE_URL = 'https://gpnrtcvtwxsoasrnmhof.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdwbnJ0Y3Z0d3hzb2Fzcm5taG9mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzNDI3MTIsImV4cCI6MjA2NTkxODcxMn0.s7e9BAFcsfUbiWAETf44sUxSGSoQ6xvZF9gPTebcMWc';
+import { supabase } from '../supabaseClient.js';
+import Swal from 'https://cdn.jsdelivr.net/npm/sweetalert2@11/+esm';
 
-const { createClient } = supabase;
-const supabaseClient = createClient(SUPABASE_URL, SUPABASE_KEY);
+const loginForm = document.getElementById('login-form');
+const signupForm = document.getElementById('signup-form');
 
-// DOM
-const loginForm = document.querySelector("#login-form");
-const signupForm = document.querySelector("#signup-form");
-const spinner = document.querySelector("#spinner");
-const toggleText = document.getElementById("toggle-mode");
-const switchToSignup = document.getElementById("switch-to-signup");
-
-// LOGIN
-loginForm?.addEventListener("submit", async (e) => {
+loginForm?.addEventListener('submit', async e => {
   e.preventDefault();
   const email = loginForm.email.value.trim();
   const password = loginForm.password.value.trim();
 
-  spinner.style.display = "flex";
-  const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
-  spinner.style.display = "none";
+  const { error } = await supabase.auth.signInWithPassword({ email, password });
 
   if (error) {
-    alert("❌ Error: " + error.message);
+    Swal.fire('Error', error.message, 'error');
   } else {
-    alert("✅ Bienvenido");
-    window.location.href = "index.html";
+    Swal.fire('Bienvenido','Inicio de sesión correcto','success').then(()=>{
+      window.location.href = 'plataforma.html';
+    });
   }
 });
 
-// REGISTRO
-signupForm?.addEventListener("submit", async (e) => {
+signupForm?.addEventListener('submit', async e => {
   e.preventDefault();
   const email = signupForm.email.value.trim();
   const password = signupForm.password.value.trim();
   const confirm = signupForm.confirm.value.trim();
 
   if (password !== confirm) {
-    alert("⚠️ Las contraseñas no coinciden");
+    Swal.fire('Atención','Las contraseñas no coinciden','warning');
     return;
   }
 
-  spinner.style.display = "flex";
-  const { error } = await supabaseClient.auth.signUp({ email, password });
-  spinner.style.display = "none";
+  const { error } = await supabase.auth.signUp({ email, password });
 
   if (error) {
-    alert("❌ Error: " + error.message);
+    Swal.fire('Error', error.message, 'error');
   } else {
-    alert("✅ Usuario creado. Revisa tu correo para confirmar.");
-    toggleForms();
+    Swal.fire('Éxito','Cuenta creada. Revisa tu correo.','success').then(()=>{
+      window.location.href = 'crear-perfil.html';
+    });
   }
 });
 
-// Cambiar entre login y signup
 function toggleForms() {
-  const isLogin = loginForm.style.display !== "none";
-  loginForm.style.display = isLogin ? "none" : "block";
-  signupForm.style.display = isLogin ? "block" : "none";
-  toggleText.innerHTML = isLogin
-    ? 'Already have an account? <a href="#" id="switch-to-login">Sign in</a>'
-    : 'Don\'t have an account? <a href="#" id="switch-to-signup">Sign up</a>';
-  bindSwitch();
+  const isLogin = loginForm.style.display !== 'none';
+  loginForm.style.display = isLogin ? 'none' : 'block';
+  signupForm.style.display = isLogin ? 'block' : 'none';
 }
 
-// Asigna evento a enlace de cambio
-function bindSwitch() {
-  const loginLink = document.querySelector("#switch-to-login");
-  const signupLink = document.querySelector("#switch-to-signup");
-  if (loginLink) loginLink.onclick = (e) => { e.preventDefault(); toggleForms(); };
-  if (signupLink) signupLink.onclick = (e) => { e.preventDefault(); toggleForms(); };
-}
-bindSwitch();
+document.getElementById('switch-to-signup')?.addEventListener('click', e => {
+  e.preventDefault();
+  toggleForms();
+});
+
+document.getElementById('switch-to-login')?.addEventListener('click', e => {
+  e.preventDefault();
+  toggleForms();
+});
