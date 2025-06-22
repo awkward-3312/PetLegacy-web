@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Perfil de Mascota | PetLegacy</title>
-  <link rel="stylesheet" href="css/perfil.css">
+  <title>Plataforma | PetLegacy</title>
+  <link rel="stylesheet" href="css/plataforma.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div id="preloader">
@@ -28,26 +29,46 @@
     </div>
   </div>
 
+  <header>
+    <div class="container navbar">
+      <h1 class="logo">PetLegacy</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="perfil.html">Perfil Mascota</a></li>
+          <li><a href="memorial.html">Memorial</a></li>
+          <li><a href="login.html">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
   <div class="container">
-    <h1>Perfiles de Mascotas</h1>
+    <h1>Tu espacio en PetLegacy</h1>
+    <p>Bienvenido de vuelta 🐾. Aquí verás tu información personal y las mascotas registradas en tu cuenta.</p>
 
-    <p>
-      En PetLegacy, cada mascota tiene su propio espacio para brillar. La sección de perfil te permite crear una ficha única para tu compañero peludo (o emplumado 🐾🐦). Aquí podrás agregar su nombre, raza, edad, una foto que lo represente, y contar su historia: cómo llegó a tu vida, sus curiosidades favoritas, sus logros… ¡todo lo que quieras compartir!
-    </p>
+    <section id="usuario">
+      <h2>Tu Perfil</h2>
+      <div id="usuario-info">
+        <!-- Carga dinámica del perfil del usuario -->
+      </div>
+    </section>
 
-    <p>
-      Los perfiles están pensados para que tu mascota tenga presencia propia dentro de la red. Otros usuarios podrán ver sus publicaciones, comentar, enviar corazones y compartir recuerdos. Si tu mascota ha partido, podrás activar el <strong>Modo Memorial</strong>, que transforma su perfil en un espacio de homenaje donde amigos y familiares pueden dejar mensajes y recuerdos.
-    </p>
+    <section id="mascotas">
+      <h2>Tus Mascotas</h2>
+      <div id="mascotas-lista" class="mascotas-grid">
+        <!-- Carga dinámica de mascotas -->
+      </div>
+    </section>
 
-    <img src="https://cdn.pixabay.com/photo/2020/04/19/10/26/dog-5068264_1280.jpg" alt="Ilustración de perfil de mascota" class="ilustracion">
-
-    <p>
-      ¡Explora, comparte y honra el legado de tu mascota en un lugar seguro, respetuoso y lleno de cariño! 💖
-    </p>
-
-    <a href="login.html" class="button">Crear perfil de mi mascota</a>
+    <a href="crear-perfil.html" class="button">Agregar nueva mascota</a>
   </div>
 
+  <footer>
+    <p>&copy; 2024 PetLegacy</p>
+  </footer>
+
+  <script type="module" src="js/plataforma.js"></script>
   <script type="module" src="js/preloader.js"></script>
 </body>
 </html>
